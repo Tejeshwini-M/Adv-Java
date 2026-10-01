@@ -1,0 +1,43 @@
+import javax.swing.*;
+
+public class SimpleSwing {
+    public static void main(String[] args) {
+
+        // Create a frame
+        JFrame frame = new JFrame("My First Swing Program");
+
+        // Create a label
+        JLabel label = new JLabel("Enter your name:");
+
+        // Create a text field
+        JTextField textField = new JTextField();
+
+        // Create a button
+        JButton button = new JButton("Click Me");
+
+        // Set positions and sizes
+        label.setBounds(50, 50, 120, 30);
+        textField.setBounds(170, 50, 150, 30);
+        button.setBounds(120, 100, 100, 30);
+
+        // Add components to frame
+        frame.add(label);
+        frame.add(textField);
+        frame.add(button);
+
+        // Set frame properties
+        frame.setSize(400, 250);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+        // Close window when X is clicked
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Button action
+        button.addActionListener(e -> {
+            String name = textField.getText();
+            JOptionPane.showMessageDialog(frame,
+                    "Hello " + name + "!");
+        });
+    }
+}
